@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>SNKRS table</h1>
+            <form>
+                <div class="form-group">
+                    <label>From:</label>
+                    <input name="year_start" style="background-color: black;" value="1950" type="range" min="1950"
+                           max="2020" class="form-control-range dark">
+                    <label>To:</label>
+                    <input name="year_finish" style="background-color: black;" value="2020" type="range" min="1950"
+                           max="2020" class="form-control-range dark">
+                    <input type="submit" value="Выбрать">
+                </div>
+            </form>
+            <table class="table table-striped table-dark">
+                <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">Model</th>
+                    <th scope="col">Release year</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in s %}
+                <tr>
+                    <th scope="row">{{ i.id }}</th>
+                    <td>{{ i.brand }}</td>
+                    <td>{{ i.model }}</td>
+                    <td>{{ i.release_year }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

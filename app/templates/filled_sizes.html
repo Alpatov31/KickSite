@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <form method="post">
+                <input type="number" step=0.5 name="number" placeholder="size" required>
+                <select name="size_type">
+                    <option value="ru">ru</option>
+                    <option value="eu">eu</option>
+                    <option value="us">us</option>
+                </select>
+                <input type="submit" value="Добавить">
+            </form>
+        </div>
+        <div class="col-12">
+            <table class="table table-dark">
+                <thead>
+                <tr>
+                    <th scope="col">US</th>
+                    <th scope="col">EU</th>
+                    <th scope="col">RU</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{ us_size }}</td>
+                    <td>{{ eu_size }}</td>
+                    <td>{{ ru_size }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
